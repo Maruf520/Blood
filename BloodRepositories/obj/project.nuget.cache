@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TcOcDRFHuKJXNrvou9W95IEGFLCS6ZdfGxeJbQ2OOM74FCl0jwL+h9aawJ3dxeZx3vE5QhbIxKc+xHmbtAPxlA==",
+  "dgSpecHash": "qHjdxAX7PGGkY846owi2LLvW4ic/k42kP4i+RGMoI9Klm5yXJ9hV4RqG224yOm/6MJZ0R7i8D58XYCa6EvqJpQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\BS567\\source\\repos\\src\\BloodRepositories\\BloodRepositories.csproj",
+  "projectFilePath": "C:\\Users\\BS567\\source\\repos\\src\\BloodRepositories\\Blood.Repositories.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BS567\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\BS567\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",

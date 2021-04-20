@@ -20,40 +20,22 @@ namespace Blood.API.Controllers
     {
 
         private readonly IUserService _userService;
-        private readonly IAuthenticationService _authenticationService;
-        public UserController(IUserService userService, IAuthenticationService authenticationService)
+        public UserController(IUserService userService)
         {
             _userService = userService;
-            _authenticationService = authenticationService;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateUserAsync(UserCreateDto user)
-        {
-            var createuser = await _userService.CreateUserAsync(user);
-            return Ok(createuser);
-        }
-
-        [HttpGet]
-
-        public IActionResult GetallUser()
+        [HttpGet("getall")]
+        public async Task<IActionResult> GetallUser()
         {
             return Ok(_userService.GetAllAsync());
-        }
-
-
-        [HttpPost("login")]
-        public async Task<IActionResult> Login(UserLogInDto loginDto)
-        {
-            var token = await _authenticationService.LoginAsync(loginDto);
-            return Ok(token);
         }
 
 
         [HttpPost("getbyName")]
         public async Task<IActionResult> GetbyName(UserNameDto user)
         {
-            var user1 =  _userService.GetUserByname(user);
+            var user1 = await _userService.GetUserByname(user);
             return Ok(user1);
         }
     }

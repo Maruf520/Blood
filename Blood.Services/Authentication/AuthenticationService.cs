@@ -15,7 +15,7 @@ namespace Blood.Services.Authentication
     {
         private readonly IUserRepository _userRepository;
         private readonly IUserExtensionService _userExtensionService;
-         public AuthenticationService(IUserRepository userRepository, IUserExtensionService userExtensionService)
+        public AuthenticationService(IUserRepository userRepository, IUserExtensionService userExtensionService)
         {
             _userRepository = userRepository;
             _userExtensionService = userExtensionService;
@@ -23,7 +23,7 @@ namespace Blood.Services.Authentication
         public async Task<TokenDto> LoginAsync(UserLogInDto loginDto)
         {
             var users = await _userRepository.GetUserByName(loginDto.Email);
-            if(users  == null)
+            if (users == null)
             {
                 throw new UnauthorizedException("No user found with this name");
             }

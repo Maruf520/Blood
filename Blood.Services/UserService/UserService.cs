@@ -24,16 +24,18 @@ namespace Blood.Services.UserService
         {
             _userExtensionService = userExtensionService;
             _userRepository = userRepository;
-                _mapper = mapper;
+            _mapper = mapper;
         }
-        public async Task<GetUserDto> CreateUserAsync(UserCreateDto user)
+        public async Task<ServiceResponse<GetUserDto>> CreateUserAsync(UserCreateDto user)
         {
+            ServiceResponse<GetUserDto> ServiceResponse = new();
             var userTocreate = user;
             userTocreate.Password = _userExtensionService.GetUserHashPassword(user.Password);
 
-           var createUser =  await _userRepository.CreateAsync(userTocreate);
-            var us = _mapper.Map<GetUserDto>(createUser);
-            return us;
+            var createUser = await _userRepository.CreateAsync(userTocreate);
+            var createdUser = _mapper.Map<GetUserDto>(createUser);
+            ServiceResponse.Data = createdUser;
+            return ServiceResponse;
 
         }
 
@@ -42,10 +44,10 @@ namespace Blood.Services.UserService
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<UserNameDto>> GetAllAsync()
+        public async Task<IEnumerable<GetUserDto>> GetAllAsync()
         {
             var allusers = await _userRepository.AllUsersAsync();
-            var users = _mapper.Map<IEnumerable<UserNameDto>>(allusers);
+            var users = _mapper.Map<IEnumerable<GetUserDto>>(allusers);
             return users;
         }
 
@@ -59,15 +61,25 @@ namespace Blood.Services.UserService
         {
             var x = await _userRepository.GetUserByName(name);
 
-            var user =  _mapper.Map<GetUserDto>(x);
+            var user = _mapper.Map<GetUserDto>(x);
             return user;
         }
 
-        public async Task<GetUserDto> GetUserByname(UserNameDto name)
+        public async Task<ServiceResponse<GetUserDto>> GetUserByname(UserNameDto name)
         {
-            var user =  _userRepository.GetUserByname(name.Email);
-            var x =  _mapper.Map<GetUserDto>(user);
-            return x;
+            ServiceResponse<GetUserDto> response = new();
+            var user = _userRepository.GetUserByname(name.Email);
+            if(user != null)
+            {
+                var userByName = _mapper.Map<GetUserDto>(user);
+                response.Data = userByName;
+            }
+            else
+            {
+                response.Success = false;
+                response.Message = "User Not Found!!";
+            }
+            return response;
         }
 
         public Task<User> UpdateAsync(User user)

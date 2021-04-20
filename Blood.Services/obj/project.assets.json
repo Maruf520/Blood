@@ -1643,7 +1643,7 @@
           "bin/placeholder/Blood.Models.dll": {}
         }
       },
-      "BloodRepositories/1.0.0": {
+      "Blood.Repositories/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
@@ -1654,10 +1654,10 @@
           "Selenium.WebDriver": "3.141.0"
         },
         "compile": {
-          "bin/placeholder/BloodRepositories.dll": {}
+          "bin/placeholder/Blood.Repositories.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BloodRepositories.dll": {}
+          "bin/placeholder/Blood.Repositories.dll": {}
         }
       },
       "Dtos/1.0.0": {
@@ -5978,10 +5978,10 @@
       "path": "../Blood.Models/Blood.Models.csproj",
       "msbuildProject": "../Blood.Models/Blood.Models.csproj"
     },
-    "BloodRepositories/1.0.0": {
+    "Blood.Repositories/1.0.0": {
       "type": "project",
-      "path": "../BloodRepositories/BloodRepositories.csproj",
-      "msbuildProject": "../BloodRepositories/BloodRepositories.csproj"
+      "path": "../BloodRepositories/Blood.Repositories.csproj",
+      "msbuildProject": "../BloodRepositories/Blood.Repositories.csproj"
     },
     "Dtos/1.0.0": {
       "type": "project",
@@ -5992,7 +5992,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Blood.Models >= 1.0.0",
-      "BloodRepositories >= 1.0.0",
+      "Blood.Repositories >= 1.0.0",
       "Dtos >= 1.0.0",
       "EnyimMemcached >= 2.16.0",
       "Microsoft.AspNetCore.Cryptography.KeyDerivation >= 5.0.5",
@@ -6030,8 +6030,8 @@
             "C:\\Users\\BS567\\source\\repos\\src\\Blood.Models\\Blood.Models.csproj": {
               "projectPath": "C:\\Users\\BS567\\source\\repos\\src\\Blood.Models\\Blood.Models.csproj"
             },
-            "C:\\Users\\BS567\\source\\repos\\src\\BloodRepositories\\BloodRepositories.csproj": {
-              "projectPath": "C:\\Users\\BS567\\source\\repos\\src\\BloodRepositories\\BloodRepositories.csproj"
+            "C:\\Users\\BS567\\source\\repos\\src\\BloodRepositories\\Blood.Repositories.csproj": {
+              "projectPath": "C:\\Users\\BS567\\source\\repos\\src\\BloodRepositories\\Blood.Repositories.csproj"
             },
             "C:\\Users\\BS567\\source\\repos\\src\\Dtos\\Dtos.csproj": {
               "projectPath": "C:\\Users\\BS567\\source\\repos\\src\\Dtos\\Dtos.csproj"

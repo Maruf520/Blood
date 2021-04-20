@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Blood.Services.Authentication
 {
-    public  interface IAuthenticationService
+    public interface IAuthenticationService
     {
         Task<TokenDto> LoginAsync(UserLogInDto user);
     }

@@ -9,7 +9,7 @@
       "Blood.Services/1.0.0": {
         "dependencies": {
           "Blood.Models": "1.0.0",
-          "BloodRepositories": "1.0.0",
+          "Blood.Repositories": "1.0.0",
           "Dtos": "1.0.0",
           "EnyimMemcached": "2.16.0",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "5.0.5",
@@ -1012,7 +1012,7 @@
           "Blood.Models.dll": {}
         }
       },
-      "BloodRepositories/1.0.0": {
+      "Blood.Repositories/1.0.0": {
         "dependencies": {
           "AutoMapper": "10.1.1",
           "Blood.Models": "1.0.0",
@@ -1021,7 +1021,7 @@
           "Selenium.WebDriver": "3.141.0"
         },
         "runtime": {
-          "BloodRepositories.dll": {}
+          "Blood.Repositories.dll": {}
         }
       },
       "Dtos/1.0.0": {
@@ -1780,7 +1780,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "BloodRepositories/1.0.0": {
+    "Blood.Repositories/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

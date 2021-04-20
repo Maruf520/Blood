@@ -12,10 +12,11 @@ using System.Threading.Tasks;
 
 namespace BloodRepositories.UserRepositories
 {
-   public class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
     {
         private readonly IMongoCollection<User> _user;
         private readonly IMapper _mapper;
+
         public UserRepository(IDbClient dbClient, IMapper mapper)
         {
             _user = dbClient.GetUsersCollection();
@@ -24,21 +25,22 @@ namespace BloodRepositories.UserRepositories
 
         public async Task<GetUserDto> CreateAsync(UserCreateDto user)
         {
-            var xx =   _mapper.Map<User>(user);
+            var xx = _mapper.Map<User>(user);
 
             await _user.InsertOneAsync(xx);
 
 
-            var usr =  _mapper.Map<GetUserDto>(xx);
+            var usr = _mapper.Map<GetUserDto>(xx);
 
             return usr;
 
         }
 
-        public async Task<IEnumerable<UserNameDto>> AllUsersAsync()
+        public async Task<IEnumerable<GetUserDto>> AllUsersAsync()
         {
             var allusers = await _user.FindAsync(c => true);
-            var x = _mapper.Map<IEnumerable<UserNameDto>>(_user).ToList();
+            var xx = allusers.ToList();
+            var x = _mapper.Map<IEnumerable<GetUserDto>>(_user);
             return x;
 
         }
@@ -46,7 +48,7 @@ namespace BloodRepositories.UserRepositories
         {
             var cursor = await _user.FindAsync(c => c.Email == name);
             var usr = await cursor.FirstOrDefaultAsync();
-            if(usr == null)
+            if (usr == null)
             {
                 throw new NotFoundException($"No user exists with name{usr}");
             }
@@ -56,10 +58,7 @@ namespace BloodRepositories.UserRepositories
 
         public User GetUserByname(string name)
         {
-           return _user.Find(c => c.Email == name).FirstOrDefault();
-             
-
-            
+            return _user.Find(c => c.Email == name).FirstOrDefault();
         }
 
 

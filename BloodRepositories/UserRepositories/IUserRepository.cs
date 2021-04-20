@@ -11,7 +11,7 @@ namespace BloodRepositories.UserRepositories
     public interface IUserRepository
     {
         Task<GetUserDto> CreateAsync(UserCreateDto user);
-        Task<IEnumerable<UserNameDto>> AllUsersAsync();
+        Task<IEnumerable<GetUserDto>> AllUsersAsync();
         Task<User> GetUserByName(string name);
         User GetUserByname(string name);
 

@@ -39,7 +39,7 @@ namespace Blood.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Blood.API", Version = "v1" });
             });
             services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IUserRepository,UserRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserExtensionService, UserExtensionService>();
             services.AddSingleton<IDbClient, DbClient>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();

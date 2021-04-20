@@ -15,7 +15,7 @@ namespace Blood.Services.UserExtensionService
 {
     public class UserExtensionService : IUserExtensionService
     {
-       
+
         public bool CheckIfUserPasswordIsCorrect(string password, string hashpassword)
         {
             return GetUserHashPassword(password) == hashpassword;
@@ -24,7 +24,8 @@ namespace Blood.Services.UserExtensionService
         public TokenDto GenerateUserAccessToken(User user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes("This_is_hidden");
+            var charCount = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+            var key = Encoding.UTF8.GetBytes(charCount);
 
             var tokenDiscriptor = new SecurityTokenDescriptor
             {

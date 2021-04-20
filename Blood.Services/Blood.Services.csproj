@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Blood.Models\Blood.Models.csproj" />
-    <ProjectReference Include="..\BloodRepositories\BloodRepositories.csproj" />
+    <ProjectReference Include="..\BloodRepositories\Blood.Repositories.csproj" />
     <ProjectReference Include="..\Dtos\Dtos.csproj" />
   </ItemGroup>
 

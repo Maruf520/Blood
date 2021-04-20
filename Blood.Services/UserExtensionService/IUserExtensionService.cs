@@ -13,6 +13,6 @@ namespace Blood.Services.UserExtensionService
         string GetUserHashPassword(string password);
         bool CheckIfUserPasswordIsCorrect(string password, string hashpassword);
         TokenDto GenerateUserAccessToken(User user);
-/*        Task<TokenDto> GenerateUserAccessToken(User users);*/
+        /*        Task<TokenDto> GenerateUserAccessToken(User users);*/
     }
 }

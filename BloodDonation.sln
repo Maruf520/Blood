@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blood.Services", "Blood.Ser
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blood.Models", "Blood.Models\Blood.Models.csproj", "{673D53AC-FFAD-40EB-ABEF-5FB6FFEAC4A5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodRepositories", "BloodRepositories\BloodRepositories.csproj", "{B68497EF-701B-43C0-B8DC-C8E1017E36FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blood.Repositories", "BloodRepositories\Blood.Repositories.csproj", "{B68497EF-701B-43C0-B8DC-C8E1017E36FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dtos", "Dtos\Dtos.csproj", "{B7BACA05-0ABC-46B2-ABB0-0FCE58C97835}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dtos", "Dtos\Dtos.csproj", "{B7BACA05-0ABC-46B2-ABB0-0FCE58C97835}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

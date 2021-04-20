@@ -582,12 +582,29 @@
           "bin/placeholder/Blood.Models.dll": {}
         }
       },
+      "Blood.Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AutoMapper": "10.1.1",
+          "Blood.Models": "1.0.0",
+          "Dtos": "1.0.0",
+          "MongoDB.Driver": "2.12.2",
+          "Selenium.WebDriver": "3.141.0"
+        },
+        "compile": {
+          "bin/placeholder/Blood.Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Blood.Repositories.dll": {}
+        }
+      },
       "Blood.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Blood.Models": "1.0.0",
-          "BloodRepositories": "1.0.0",
+          "Blood.Repositories": "1.0.0",
           "Dtos": "1.0.0",
           "EnyimMemcached": "2.16.0",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "5.0.5",
@@ -599,23 +616,6 @@
         },
         "runtime": {
           "bin/placeholder/Blood.Services.dll": {}
-        }
-      },
-      "BloodRepositories/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "AutoMapper": "10.1.1",
-          "Blood.Models": "1.0.0",
-          "Dtos": "1.0.0",
-          "MongoDB.Driver": "2.12.2",
-          "Selenium.WebDriver": "3.141.0"
-        },
-        "compile": {
-          "bin/placeholder/BloodRepositories.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BloodRepositories.dll": {}
         }
       },
       "Dtos/1.0.0": {
@@ -1645,15 +1645,15 @@
       "path": "../Blood.Models/Blood.Models.csproj",
       "msbuildProject": "../Blood.Models/Blood.Models.csproj"
     },
+    "Blood.Repositories/1.0.0": {
+      "type": "project",
+      "path": "../BloodRepositories/Blood.Repositories.csproj",
+      "msbuildProject": "../BloodRepositories/Blood.Repositories.csproj"
+    },
     "Blood.Services/1.0.0": {
       "type": "project",
       "path": "../Blood.Services/Blood.Services.csproj",
       "msbuildProject": "../Blood.Services/Blood.Services.csproj"
-    },
-    "BloodRepositories/1.0.0": {
-      "type": "project",
-      "path": "../BloodRepositories/BloodRepositories.csproj",
-      "msbuildProject": "../BloodRepositories/BloodRepositories.csproj"
     },
     "Dtos/1.0.0": {
       "type": "project",

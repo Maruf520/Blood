@@ -22,10 +22,8 @@ C:\Users\BS567\source\repos\src\Blood.Services\bin\Debug\net5.0\Blood.Services.d
 C:\Users\BS567\source\repos\src\Blood.Services\bin\Debug\net5.0\ref\Blood.Services.dll
 C:\Users\BS567\source\repos\src\Blood.Services\bin\Debug\net5.0\Blood.Services.pdb
 C:\Users\BS567\source\repos\src\Blood.Services\bin\Debug\net5.0\Blood.Models.dll
-C:\Users\BS567\source\repos\src\Blood.Services\bin\Debug\net5.0\BloodRepositories.dll
 C:\Users\BS567\source\repos\src\Blood.Services\bin\Debug\net5.0\Dtos.dll
 C:\Users\BS567\source\repos\src\Blood.Services\bin\Debug\net5.0\Blood.Models.pdb
-C:\Users\BS567\source\repos\src\Blood.Services\bin\Debug\net5.0\BloodRepositories.pdb
 C:\Users\BS567\source\repos\src\Blood.Services\bin\Debug\net5.0\Dtos.pdb
 C:\Users\BS567\source\repos\src\Blood.Services\obj\Debug\net5.0\Blood.Services.csprojAssemblyReference.cache
 C:\Users\BS567\source\repos\src\Blood.Services\obj\Debug\net5.0\Blood.Services.GeneratedMSBuildEditorConfig.editorconfig
@@ -36,3 +34,5 @@ C:\Users\BS567\source\repos\src\Blood.Services\obj\Debug\net5.0\Blood.Services.c
 C:\Users\BS567\source\repos\src\Blood.Services\obj\Debug\net5.0\Blood.Services.dll
 C:\Users\BS567\source\repos\src\Blood.Services\obj\Debug\net5.0\ref\Blood.Services.dll
 C:\Users\BS567\source\repos\src\Blood.Services\obj\Debug\net5.0\Blood.Services.pdb
+C:\Users\BS567\source\repos\src\Blood.Services\bin\Debug\net5.0\Blood.Repositories.dll
+C:\Users\BS567\source\repos\src\Blood.Services\bin\Debug\net5.0\Blood.Repositories.pdb
