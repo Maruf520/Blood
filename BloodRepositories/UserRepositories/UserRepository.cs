@@ -36,12 +36,10 @@ namespace BloodRepositories.UserRepositories
 
         }
 
-        public async Task<IEnumerable<GetUserDto>> AllUsersAsync()
+        public List<User> AllUsersAsync()
         {
-            var allusers = await _user.FindAsync(c => true);
-            var xx = allusers.ToList();
-            var x = _mapper.Map<IEnumerable<GetUserDto>>(_user);
-            return x;
+
+            return _user.Find(c => true).ToList();
 
         }
         public async Task<User> GetUserByName(string name)
@@ -56,7 +54,7 @@ namespace BloodRepositories.UserRepositories
             return usr;
         }
 
-        public User GetUserByname(string name)
+        public async Task<User> GetUserByname(string name)
         {
             return _user.Find(c => c.Email == name).FirstOrDefault();
         }

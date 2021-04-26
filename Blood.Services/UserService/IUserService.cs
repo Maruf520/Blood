@@ -12,7 +12,7 @@ namespace Blood.Services.UserService
     {
         Task<ServiceResponse<GetUserDto>> CreateUserAsync(UserCreateDto user);
         Task<GetUserDto> GetUserByIdAsync(User user);
-        Task<IEnumerable<GetUserDto>> GetAllAsync();
+        Task<ServiceResponse<List<GetUserDto>>> GetAllAsync();
         Task<User> UpdateAsync(User user);
         Task<bool> DeleteAsync(User user);
         Task<GetUserDto> GetUserByName(string name);

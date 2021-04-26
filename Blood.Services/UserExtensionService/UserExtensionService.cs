@@ -31,7 +31,8 @@ namespace Blood.Services.UserExtensionService
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                     new Claim(ClaimTypes.Name, user.Id.ToString()),
+                    new Claim(ClaimTypes.Name, user.Id.ToString())
+
 
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),

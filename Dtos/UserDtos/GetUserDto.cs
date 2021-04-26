@@ -9,10 +9,13 @@ namespace Dtos.UserDtos
 {
     public class GetUserDto
     {
-        public string Id { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public BloodGroup bloodGroup { get; set; }
+        public string UserName { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public DateTime LastDateOfDonation { get; set; }
+        public string Address { get; set; }
 
 
     }

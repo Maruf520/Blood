@@ -34,8 +34,12 @@ namespace Blood.API.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<TokenDto>> LoginAsync(UserLogInDto userLogInDto)
         {
+
+
             var token = await _authenticationService.LoginAsync(userLogInDto);
-            return Ok(token);
+
+            var usertoken = new TokenDto() { Bearer = token.Bearer };
+            return Ok(usertoken);
         }
     }
 }

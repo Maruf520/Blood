@@ -4,13 +4,18 @@ using Blood.Models.DbClient;
 using Blood.Services.UserExtensionService;
 using BloodRepositories.UserRepositories;
 using Dtos.UserDtos;
+using Microsoft.AspNetCore.Http;
 using MongoDB.Driver;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+
+using System.Linq;
+using System.Security.Claims;
 
 namespace Blood.Services.UserService
 {
@@ -18,13 +23,16 @@ namespace Blood.Services.UserService
     {
         private readonly IUserRepository _userRepository;
         private readonly IUserExtensionService _userExtensionService;
-
         private readonly IMapper _mapper;
-        public UserService(IUserExtensionService userExtensionService, IUserRepository userRepository, IMapper mapper)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public UserService(IUserExtensionService userExtensionService,IUserRepository userRepository, IMapper mapper, IHttpContextAccessor httpContextAccessor)
         {
             _userExtensionService = userExtensionService;
             _userRepository = userRepository;
             _mapper = mapper;
+            _httpContextAccessor = httpContextAccessor;
+
         }
         public async Task<ServiceResponse<GetUserDto>> CreateUserAsync(UserCreateDto user)
         {
@@ -44,13 +52,16 @@ namespace Blood.Services.UserService
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<GetUserDto>> GetAllAsync()
-        {
-            var allusers = await _userRepository.AllUsersAsync();
-            var users = _mapper.Map<IEnumerable<GetUserDto>>(allusers);
-            return users;
-        }
 
+        public async Task<ServiceResponse<List<GetUserDto>>> GetAllAsync()
+        {
+            ServiceResponse<List<GetUserDto>> response = new();
+
+            var user =  _userRepository.AllUsersAsync();
+          
+            response.Data = (user.Select(c => _mapper.Map<GetUserDto>(c)).ToList());
+            return response;
+        }
 
         public Task<GetUserDto> GetUserByIdAsync(User user)
         {
@@ -68,10 +79,10 @@ namespace Blood.Services.UserService
         public async Task<ServiceResponse<GetUserDto>> GetUserByname(UserNameDto name)
         {
             ServiceResponse<GetUserDto> response = new();
-            var user = _userRepository.GetUserByname(name.Email);
+            var user = await  _userRepository.GetUserByname(name.Email);
             if(user != null)
             {
-                var userByName = _mapper.Map<GetUserDto>(user);
+                var userByName =  _mapper.Map<GetUserDto>(user);
                 response.Data = userByName;
             }
             else
@@ -86,6 +97,11 @@ namespace Blood.Services.UserService
         {
             throw new NotImplementedException();
         }
-
+/*
+      public string GetUserId()
+        {
+            var id = _httpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            return id;
+        }*/
     }
 }

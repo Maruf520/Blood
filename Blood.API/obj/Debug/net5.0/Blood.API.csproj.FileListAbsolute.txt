@@ -130,3 +130,6 @@ C:\Users\BS567\source\repos\src\Blood.API\obj\Debug\net5.0\Blood.API.pdb
 C:\Users\BS567\source\repos\src\Blood.API\obj\Debug\net5.0\Blood.API.genruntimeconfig.cache
 C:\Users\BS567\source\repos\src\Blood.API\bin\Debug\net5.0\Blood.Repositories.dll
 C:\Users\BS567\source\repos\src\Blood.API\bin\Debug\net5.0\Blood.Repositories.pdb
+C:\Users\BS567\source\repos\src\Blood.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\BS567\source\repos\src\Blood.API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\BS567\source\repos\src\Blood.API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
